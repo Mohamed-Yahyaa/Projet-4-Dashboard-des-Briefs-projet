@@ -9,5 +9,12 @@ class Tasks extends Model
 {
     use HasFactory;
 
+    protected $table = 'todo';
+    protected $fillable =[
+        'Name_Task',
+        'descreption',
+        'status'
+    ];
+
     public $timestamps = true;
 }
