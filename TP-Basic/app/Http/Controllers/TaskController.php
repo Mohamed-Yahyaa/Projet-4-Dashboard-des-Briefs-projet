@@ -21,7 +21,7 @@ class TaskController extends Controller
     {
         //
         $task = Tasks::create([
-            'Name_Task' =>$request->nom
+            'Name_Task' =>$request->Name_Task,
            
 
             ])->save();
@@ -43,7 +43,7 @@ class TaskController extends Controller
         //
         $task = Tasks::find($id)
         ->update([
-            'Name_Task' =>$request->nom
+            'Name_Task' =>$request->Name_Task,
          
         ]);
         if($task){
