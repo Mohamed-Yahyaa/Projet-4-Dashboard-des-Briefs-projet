@@ -21,9 +21,8 @@ class TaskController extends Controller
     {
         //
         $task = Tasks::create([
-            'Name_Task' =>$request->nom,
-            'descreption' =>$request->descreption,
-            'status' =>$request->status
+            'Name_Task' =>$request->nom
+           
 
             ])->save();
             if($task){
@@ -44,9 +43,8 @@ class TaskController extends Controller
         //
         $task = Tasks::find($id)
         ->update([
-            'Name_Task' =>$request->nom,
-            'descreption' =>$request->descreption,
-            'status' =>$request->status
+            'Name_Task' =>$request->nom
+         
         ]);
         if($task){
             return response()->json(["status" => "edit success"]);

@@ -15,9 +15,7 @@ return new class extends Migration
     {
         Schema::create('todo', function (Blueprint $table) {
             $table->id();
-            $table->string('Name_Task');
-            $table->string('descreption');
-            $table->integer('status')->default(0)->comment('0 = in progress; 1 = completed; 2 = paused');
+         $table->string('Name_Task');
             $table->timestamps();
         });
     }

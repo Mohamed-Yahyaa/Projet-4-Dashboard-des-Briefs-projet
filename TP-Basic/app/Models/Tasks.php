@@ -11,9 +11,8 @@ class Tasks extends Model
 
     protected $table = 'todo';
     protected $fillable =[
-        'Name_Task',
-        'descreption',
-        'status'
+        'Name_Task'
+       
     ];
 
     public $timestamps = true;
