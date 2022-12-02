@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('todo', function (Blueprint $table) {
             $table->id();
-         $table->string('Name_Task');
+            $table->string('Name_Task');
             $table->timestamps();
         });
     }

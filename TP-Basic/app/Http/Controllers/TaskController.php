@@ -33,6 +33,10 @@ class TaskController extends Controller
         }
     }
 
+    public function edit($id){
+        $task = Tasks::find($id);
+        return $task ;
+    }
    
  
  
