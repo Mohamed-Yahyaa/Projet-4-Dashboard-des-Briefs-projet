@@ -6,7 +6,8 @@ class Table extends React.Component {
       
 state = {
     Data:[],
-    Name_Task:""
+    Name_Task:"",
+    id:""
 }
 
 componentDidMount(){
@@ -24,15 +25,22 @@ handelChange=(input)=>{
 handelClick=()=>{
     axios.post("http://localhost:8000/api/store",this.state)
     .then(res=>{
-      alert('sucess')
-      window.location.reload()
+
+        axios.get("http://localhost:8000/api/index")
+        .then(res=>this.setState({
+            Data:res.data
+        }))
+      
     })
      
 }
 handelDelete=(id)=>{
     axios.delete("http://localhost:8000/api/destroy/"+id).then(res=>{
-        alert('!!!')
-        window.location.reload()
+        
+        axios.get("http://localhost:8000/api/index")
+        .then(res=>this.setState({
+            Data:res.data
+        }))
 
     })
 }
@@ -47,9 +55,15 @@ handelEdit=(id)=>{
 }
 
 handelUpdate=()=>{
-    axios.post('http://localhost:8000/api/update/'+id,this.state).then(res=>{
-        alert("!!!")
-        window.location.reload()
+    axios.post('http://localhost:8000/api/update/'+this.state.id, {
+        Name_Task : this.state.Name_Task
+    })
+    .then(res=>{
+        axios.get("http://localhost:8000/api/index")
+        .then(res=>this.setState({
+            Data:res.data
+        }))
+        
     })
 }
 render(){
