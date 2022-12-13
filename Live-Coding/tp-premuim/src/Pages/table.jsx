@@ -37,7 +37,7 @@ handelClick=()=>{
 }
 
 handelDelete=(id)=>{
-    axios.delete('http://localhost:8000/api/destroy'+id).then(res=>{
+    axios.delete('http://localhost:8000/api/destroy/'+id).then(res=>{
         alert("data has been deleted")
         window.location.reload()
     })
