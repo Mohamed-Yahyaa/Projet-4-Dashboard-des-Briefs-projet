@@ -14,8 +14,18 @@ return new class extends Migration
     public function up()
     {
         Schema::create('groupes_preparation_brief', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->increments('id');
+            $table->unsignedInteger("apprenant_preparation_brief_id")->nullable();
+            $table->foreign("apprenant_preparation_brief_id")
+            ->references("id")
+            ->on('apprenant_preparation_brief')
+            ->onDelete('cascade');
+
+            $table->unsignedInteger("groupe_id")->nullable();
+            $table->foreign("groupe_id")
+            ->references("id")
+            ->on('groupes')
+            ->onDelete('cascade');
         });
     }
 

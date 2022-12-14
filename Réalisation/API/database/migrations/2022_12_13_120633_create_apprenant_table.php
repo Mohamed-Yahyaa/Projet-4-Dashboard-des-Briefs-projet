@@ -14,8 +14,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('apprenant', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->increments('id');
+            $table->string("Nom")->nullable();
+            $table->string("Prenom")->nullable();
+            $table->string("Email")->nullable();
+            $table->decimal("Phone")->nullable();
+            $table->string("Adress")->nullable();
+            $table->string("CIN")->nullable();
+            $table->date("Date_naissance")->nullable();
+            $table->string("Image")->nullable();
         });
     }
 

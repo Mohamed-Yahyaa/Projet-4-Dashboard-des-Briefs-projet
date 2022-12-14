@@ -14,8 +14,16 @@ return new class extends Migration
     public function up()
     {
         Schema::create('preparation_brief', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->increments('id');
+            $table->string("Nom_du_brief")->nullable();
+            $table->string("Description")->nullable();
+            $table->decimal("Duree")->nullable();
+
+            $table->unsignedInteger("formateur_id")->nullable();
+            $table->foreign("formateur_id")
+            ->references("id")
+            ->on('formateur')
+            ->onDelete('cascade');
         });
     }
 

@@ -14,8 +14,16 @@ return new class extends Migration
     public function up()
     {
         Schema::create('preparation_tache', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->increments('id');
+            $table->string("Nom_tache")->nullable();
+            $table->string("Description")->nullable();
+            $table->decimal("Duree")->nullable();
+
+            $table->unsignedInteger("preparation_brief_id")->nullable();
+            $table->foreign("preparation_brief_id")
+            ->references("id")
+            ->on('preparation_brief')
+            ->onDelete('cascade');
         });
     }
 
