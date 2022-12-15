@@ -23,11 +23,7 @@ return new class extends Migration
             $table->string("CIN")->nullable();
             $table->date("Date_naissance")->nullable();
             $table->string("Image")->nullable();
-            // $table->unsignedInteger("promotion_id")->nullable();
-            // $table->foreign("promotion_id")
-            // ->references("id")
-            // ->on('promotions')
-            // ->onDelete('cascade');
+          
         });
     }
 
