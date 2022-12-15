@@ -17,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('Groupe/{id}', [DashboardController::class,'Groupe'])->name('Groupe');
+Route::get('formateur', [DashboardController::class,'formateur'])->name('formateur');
+Route::get('Av_ApprenantTache/{idF}/{idB}', [DashboardController::class,'Av_ApprenantTache'])->name('Av_ApprenantTache');
