@@ -1,14 +1,18 @@
-import React from "react";
+import React , {Component} from "react";
 import axios from "axios";
+import Task from "./Task";
 
 
-class Table extends React.Component {
-      
-state = {
+class AppTodo extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
     Data:[],
     Name_Task:"",
     id:""
-}
+} 
+ } 
+
 
 componentDidMount(){
     axios.get("http://localhost:8000/api/index")
@@ -101,4 +105,4 @@ render(){
 
 
 
-export default Table;
+export default AppTodo;

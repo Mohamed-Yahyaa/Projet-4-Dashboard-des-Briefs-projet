@@ -3,15 +3,17 @@ import axios from "axios"
 
 
 
+class Task extends React.Component {
 
-class Table extends React.Component {
-
-    state = {
-        Data:[],
-        Name_Task:"",
-        id:""
-
+    Constructor (props) {
+        super (props)
+        this.state = {
+            Data:[],
+           Name_Task:"",
+        }
     }
+
+   
 componentDidMount(){
     axios.get('http://localhost:8000/api/index')
     .then(res=>

@@ -3,15 +3,15 @@ import './App.css';
 
 import React from "react";
 
-import Table from './Pages/table';
+import Task from './Component/AppTodo';
 
 
 class App extends React.Component {
   render(){
     return (
       <div className='App'>
-        App
-        <Table/>
+        
+        <Task/>
 
       </div>
     );
